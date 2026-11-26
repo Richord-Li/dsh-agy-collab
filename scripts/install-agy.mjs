@@ -10,12 +10,12 @@ const DST = path.join(os.homedir(), '.gemini', 'config', 'plugins', 'dsh-collab'
 
 fs.mkdirSync(path.join(DST, 'assets'), { recursive: true });
 fs.mkdirSync(path.join(DST, 'rules'), { recursive: true });
-fs.mkdirSync(path.join(DST, 'skills', 'dsh-collab'), { recursive: true });
+fs.mkdirSync(path.join(DST, 'skills'), { recursive: true });
 
 fs.copyFileSync(path.join(SRC, 'plugin.json'), path.join(DST, 'plugin.json'));
 fs.copyFileSync(path.join(SRC, 'assets', 'logo.svg'), path.join(DST, 'assets', 'logo.svg'));
 fs.copyFileSync(path.join(SRC, 'rules', 'AGENTS.md'), path.join(DST, 'rules', 'AGENTS.md'));
-fs.copyFileSync(path.join(SRC, 'skills', 'dsh-collab', 'SKILL.md'), path.join(DST, 'skills', 'dsh-collab', 'SKILL.md'));
+fs.cpSync(path.join(SRC, 'skills'), path.join(DST, 'skills'), { recursive: true });
 
 const serverPath = path.join(SRC, 'mcp', 'server.mjs').replace(/\\/g, '/');
 const mcpConfig = {
