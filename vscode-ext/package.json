@@ -1,0 +1,86 @@
+{
+  "name": "dsh-agy-collab-vscode",
+  "displayName": "DSH ↔ Antigravity 双向协同台",
+  "description": "VS Code 原生侧边栏与状态栏扩展：连接 Antigravity 与 DeepSeek Harness (dsh)，支持双向代码审查、一键发送当前文件、记忆检索与 dsh 插件调用。",
+  "version": "0.1.0",
+  "publisher": "local-dev",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "DSH ↔ Antigravity 双向协同",
+      "properties": {
+        "dshCollab.collabRoot": {
+          "type": "string",
+          "default": "",
+          "description": "dsh-agy-collab 仓库根目录路径（留空则自动探测环境变量 DSH_AGY_COLLAB_DIR 或用户目录 ~/.dsh-agy-collab）"
+        },
+        "dshCollab.hubPort": {
+          "type": "number",
+          "default": 47891,
+          "description": "本地协同中枢端口（默认 47891）"
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "dsh-collab-container",
+          "title": "DSH 双向协同",
+          "icon": "media/activity-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "dsh-collab-container": [
+        {
+          "type": "webview",
+          "id": "dshCollab.sidebarView",
+          "name": "协同控制台"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "dshCollab.openSidebar",
+        "title": "DSH 协同: 打开侧边栏协同台"
+      },
+      {
+        "command": "dshCollab.refresh",
+        "title": "DSH 协同: 刷新状态",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "dshCollab.sendActiveFileToDsh",
+        "title": "DSH 协同: 发送当前文件给 DeepSeek 审查"
+      },
+      {
+        "command": "dshCollab.toggleAutoWake",
+        "title": "DSH 协同: 切换自动唤醒开关"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "dshCollab.refresh",
+          "when": "view == dshCollab.sidebarView",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "dshCollab.sendActiveFileToDsh",
+          "group": "navigation@99"
+        }
+      ]
+    }
+  }
+}

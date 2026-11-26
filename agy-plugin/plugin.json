@@ -1,0 +1,12 @@
+{
+  "name": "dsh-collab",
+  "displayName": "DSH 双向协同台",
+  "version": "0.1.0",
+  "description": "实现 Antigravity 与 DeepSeek Harness (dsh) 之间的双向代码审查、任务协同、记忆互通与 dsh 插件调用，内置侧边栏可视化控制台。",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "打开 DSH 双向协同台，查看当前连接状态和待处理任务",
+    "把当前改动提交给 DeepSeek Harness 审查，并等待反馈",
+    "检索 DeepSeek Harness 的历史记忆，列出可用的 dsh 插件"
+  ]
+}

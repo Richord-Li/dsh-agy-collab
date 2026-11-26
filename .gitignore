@@ -1,0 +1,22 @@
+# Dependencies & build artifacts
+node_modules/
+dist/
+*.vsix
+agy-plugin/ui/index.html
+
+# Local runtime state, secrets, tokens & backups (NEVER commit)
+data/
+.env
+.env.*
+hub-token
+hub-state.json
+backup-*.json
+*.bak
+*.bak-*
+*.log
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

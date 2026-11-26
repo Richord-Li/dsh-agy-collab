@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "dsh-collab-hub": {
+      "command": "node",
+      "args": [
+        "<REPO_PATH>/agy-plugin/mcp/server.mjs"
+      ]
+    }
+  }
+}

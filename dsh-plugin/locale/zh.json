@@ -1,0 +1,4 @@
+{
+  "name": "Antigravity 双向协同",
+  "description": "连接 Antigravity 与 DeepSeek Harness：支持双向代码审查、原生工具互通、插件代理调用与底部状态协同浮层。"
+}

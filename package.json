@@ -1,0 +1,52 @@
+{
+  "name": "dsh-agy-collab",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "Richord-Li",
+  "homepage": "https://github.com/Richord-Li/dsh-agy-collab#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Richord-Li/dsh-agy-collab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Richord-Li/dsh-agy-collab/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "files": [
+    "hub/",
+    "agy-plugin/",
+    "dsh-plugin/",
+    "vscode-ext/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
+  "description": "Bidirectional collaboration suite for Antigravity, VS Code, and DeepSeek Harness (dsh): code reviews, shared memory search, dsh plugin relay, and native visual dashboards.",
+  "keywords": [
+    "antigravity",
+    "deepseek-harness",
+    "dsh",
+    "mcp",
+    "mcp-app",
+    "vscode-extension",
+    "code-review"
+  ],
+  "scripts": {
+    "build:ui": "node scripts/build-ui.mjs",
+    "build:vsix": "python scripts/build-vsix.py",
+    "install:agy": "node scripts/install-agy.mjs",
+    "install:dsh": "node scripts/install-dsh.mjs",
+    "hub": "node hub/server.mjs",
+    "test:smoke": "node scripts/smoke-test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.0.1",
+    "@modelcontextprotocol/sdk": "^1.25.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
