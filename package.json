@@ -7,7 +7,7 @@
   "homepage": "https://github.com/Richord-Li/dsh-agy-collab#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Richord-Li/dsh-agy-collab.git"
+    "url": "git+https://github.com/Richord-Li/dsh-agy-collab.git"
   },
   "bugs": {
     "url": "https://github.com/Richord-Li/dsh-agy-collab/issues"

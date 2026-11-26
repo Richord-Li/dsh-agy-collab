@@ -323,10 +323,10 @@ server.registerTool(
   'dsh_collab_plugin_call',
   {
     title: '调用 DSH 插件',
-    description: '通过 DSH Host 桥接插件调用 DeepSeek Harness 中已安装的插件能力（如 quota-balance、surfcore、service 等）。',
+    description: '通过 DSH Host 桥接插件调用 DeepSeek Harness 中已安装的插件能力（如 host.list_services、quota-balance.status、http.get 本机回环接口）。',
     inputSchema: {
-      plugin: z.string().describe('插件名，例如 quota-balance / surfcore / host'),
-      action: z.string().describe('操作名，例如 status / list_services / http_get / invoke_service'),
+      plugin: z.string().describe('插件名，例如 host / quota-balance / http'),
+      action: z.string().describe('操作名，例如 list_services / status / get'),
       params: z.record(z.any()).optional().describe('可选参数对象'),
     },
   },
